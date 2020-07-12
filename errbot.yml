@@ -1,0 +1,10 @@
+name: errbot
+channels:
+  - anaconda
+  - conda-forge
+  - defaults
+dependencies:
+  - pip:
+    - errbot
+    - errbot["slack"]
+    - slackclient
