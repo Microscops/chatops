@@ -94,5 +94,6 @@ class Chatops(BotPlugin):
         else:
             return f'Hello {args.name}, I hear your favorite number is {args.favorite_number}.'
 
+    @botcmd(split_args_with=None)
     def randomlaugh(self):
         return ''.join(random.choice(string.ascii_letters) for x in range(10))
