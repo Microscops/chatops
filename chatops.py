@@ -101,7 +101,7 @@ class Chatops(BotPlugin):
 
     @botcmd(split_args_with=None)
     def sum(self, mess, args):
-        print(args)
+        args = [int(arg) for arg in args]
         return sum(args)
 
     @arg_botcmd('first_arg', type=str)
@@ -133,6 +133,6 @@ class Chatops(BotPlugin):
 
     @botcmd(split_args_with=None)
     def list_admins(self, mess, args):
-        return f"No admin around."
+        return f"No admins around."
 
 
