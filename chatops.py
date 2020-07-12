@@ -1,6 +1,7 @@
 from errbot import BotPlugin, botcmd, arg_botcmd, webhook
 import random
 import string
+import itertools
 
 
 class Chatops(BotPlugin):
@@ -96,6 +97,42 @@ class Chatops(BotPlugin):
 
     @botcmd(split_args_with=None)
     def randomlaugh(self, mess, args):
-        print(args)
-        print(mess)
         return ''.join(random.choice(string.ascii_letters) for x in range(10))
+
+    @botcmd(split_args_with=None)
+    def sum(self, mess, args):
+        print(args)
+        return sum(args)
+
+    @arg_botcmd('first_arg', type=str)
+    @arg_botcmd('second_arg', type=str)
+    @arg_botcmd('third_arg', type=str)
+    def argp(self, mess, first_arg=None, second_arg=None, third_arg=None):
+        return f"First argument is {first_arg}\n Second argument is {second_arg}\n Third argument is {third_arg}."
+
+    @arg_botcmd('first_arg', type=str)
+    @arg_botcmd('second_arg', type=str)
+    def deploy(self, mess, first_arg=None, second_arg=None):
+        return f"Deploying {first_arg} to {second_arg}."
+
+    @arg_botcmd('first_arg', type=str)
+    def create_release(self, mess, first_arg=None):
+        return f"Creating release for {first_arg}."
+
+    @arg_botcmd('first_arg', type=str)
+    def create_repository(self, mess, first_arg=None):
+        return f"Creating repository {first_arg}."
+
+    @arg_botcmd('first_arg', type=str)
+    def create_repository(self, mess, first_arg=None):
+        return f"Creating repository for {first_arg}."
+
+    @botcmd(split_args_with=None)
+    def list_users(self, mess, args):
+        return f"There is no users module for now."
+
+    @botcmd(split_args_with=None)
+    def list_admins(self, mess, args):
+        return f"No admin around."
+
+
