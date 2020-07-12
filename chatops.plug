@@ -1,0 +1,13 @@
+[Core]
+name = chatops
+module = chatops
+
+[Documentation]
+description = chatops
+
+[Python]
+version = 3
+
+[Errbot]
+min = 6.1.4
+
