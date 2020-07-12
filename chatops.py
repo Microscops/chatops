@@ -104,14 +104,14 @@ class Chatops(BotPlugin):
         args = [int(arg) for arg in args]
         return sum(args)
 
-    @arg_botcmd('first_arg', type=str)
-    @arg_botcmd('second_arg', type=str)
     @arg_botcmd('third_arg', type=str)
+    @arg_botcmd('second_arg', type=str)
+    @arg_botcmd('first_arg', type=str)
     def argp(self, mess, first_arg=None, second_arg=None, third_arg=None):
         return f"First argument is {first_arg}\n Second argument is {second_arg}\n Third argument is {third_arg}."
 
-    @arg_botcmd('first_arg', type=str)
     @arg_botcmd('second_arg', type=str)
+    @arg_botcmd('first_arg', type=str)
     def deploy(self, mess, first_arg=None, second_arg=None):
         return f"Deploying {first_arg} to {second_arg}."
 
